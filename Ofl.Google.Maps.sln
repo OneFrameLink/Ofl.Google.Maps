@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ofl.Google.Maps", "Ofl.Google.Maps\Ofl.Google.Maps.csproj", "{3A05CE0C-A835-4993-BC8A-76E2234AC6B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ofl.Google.Maps", "src\Ofl.Google.Maps\Ofl.Google.Maps.csproj", "{3A05CE0C-A835-4993-BC8A-76E2234AC6B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{999A3573-281D-48E8-8F9A-1FE49637B11E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F2CB1F36-0D99-4077-B455-8BC2699632AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +22,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3A05CE0C-A835-4993-BC8A-76E2234AC6B7} = {999A3573-281D-48E8-8F9A-1FE49637B11E}
 	EndGlobalSection
 EndGlobal

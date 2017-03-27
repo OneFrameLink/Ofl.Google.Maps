@@ -3,7 +3,14 @@
 # NOTE: UPDATE THIS TO UPDATE ASSEMBLY AND NUGET 
 # VERSIONS!!!!!!!!
 #--------------------------------------------------
-version: '1.0.{build}'
+version: '1.1.{build}'
+
+#--------------------------------------------------
+# Environment
+#--------------------------------------------------
+environment:
+  github_personal_access_token:
+    secure: PNVFwcCuNr+X7SffsiwiVsa/JzVyZqwNJUbeve+Or/EjOwZxbd1CUC0K/5az9jsT
 
 #--------------------------------------------------
 # Branch whitelist
@@ -46,6 +53,19 @@ before_build:
 #--------------------------------------------------
 after_build:
    - nuget pack %APPVEYOR_PROJECT_NAME%\%APPVEYOR_PROJECT_NAME%.csproj -verbosity detailed
+ 
+#--------------------------------------------------
+# Build hooks - on_success
+#
+# Tags the repository in GitHub with the release version.
+#--------------------------------------------------
+on_success:
+  - git config --global credential.helper store
+  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:github_personal_access_token):x-oauth-basic@github.com`n"
+  - git config --global user.email "admin@oneframelink.com"
+  - git config --global user.name "One Frame Link"
+  - git tag "v{version}"
+  - git push origin "v{version}"
  
 #--------------------------------------------------
 # NuGet config
