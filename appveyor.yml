@@ -73,8 +73,8 @@ on_success:
   - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:GITHUB_PERSONAL_ACCESS_TOKEN):x-oauth-basic@github.com`n"
   - git config --global user.email "admin@oneframelink.com"
   - git config --global user.name "One Frame Link"
-  - git tag "%APPVEYOR_BUILD_VERSION%"
-  - git push origin "%APPVEYOR_BUILD_VERSION%"
+  - git tag "v%APPVEYOR_BUILD_VERSION%"
+  - git push origin "v%APPVEYOR_BUILD_VERSION%"
  
 #--------------------------------------------------
 # NuGet config
