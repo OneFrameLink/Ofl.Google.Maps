@@ -15,9 +15,8 @@ image: Visual Studio 2015
 # Environment
 #--------------------------------------------------
 environment:
-  github_personal_access_token:
+  GITHUB_PERSONAL_ACCESS_TOKEN:
     secure: PNVFwcCuNr+X7SffsiwiVsa/JzVyZqwNJUbeve+Or/EjOwZxbd1CUC0K/5az9jsT
-  git_tag_version: 'v{version}'
 
 #--------------------------------------------------
 # Branch whitelist
@@ -71,11 +70,11 @@ after_build:
 #--------------------------------------------------
 on_success:
   - git config --global credential.helper store
-  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:github_personal_access_token):x-oauth-basic@github.com`n"
+  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:GITHUB_PERSONAL_ACCESS_TOKEN):x-oauth-basic@github.com`n"
   - git config --global user.email "admin@oneframelink.com"
   - git config --global user.name "One Frame Link"
-  - git tag "%git_tag_version%"
-  - git push origin "%git_tag_version%"
+  - git tag "%APPVEYOR_BUILD_VERSION%"
+  - git push origin "%APPVEYOR_BUILD_VERSION%"
  
 #--------------------------------------------------
 # NuGet config
@@ -99,7 +98,7 @@ deploy:
   provider: NuGet
   api_key:
     secure: AhNvfOiNoCPXb1PnRG18sOfxSmsS+q4iNJ30PsuABsau99QGZ46C4nhSRSoUZehg
-  artifact: /{APPVEYOR_PROJECT_NAME}\.{version}\.nupkg/
+  artifact: /$(APPVEYOR_PROJECT_NAME)\.$(APPVEYOR_BUILD_VERSION)\.nupkg/
   
 #--------------------------------------------------
 # Notifications
