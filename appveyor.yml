@@ -11,6 +11,7 @@ version: '1.1.{build}'
 environment:
   github_personal_access_token:
     secure: PNVFwcCuNr+X7SffsiwiVsa/JzVyZqwNJUbeve+Or/EjOwZxbd1CUC0K/5az9jsT
+  git_tag_version: v{version}
 
 #--------------------------------------------------
 # Branch whitelist
@@ -19,6 +20,9 @@ branches:
   # Whitelist
   only:
     - master
+
+# Do not build on tags, since we auto-commit tags.
+skip_tags: true
 
 #--------------------------------------------------
 # After cloning repository
@@ -64,8 +68,8 @@ on_success:
   - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:github_personal_access_token):x-oauth-basic@github.com`n"
   - git config --global user.email "admin@oneframelink.com"
   - git config --global user.name "One Frame Link"
-  - git tag "v{version}"
-  - git push origin "v{version}"
+  - git tag "%git_tag_version%"
+  - git push origin "%git_tag_version%"
  
 #--------------------------------------------------
 # NuGet config
