@@ -10,7 +10,7 @@
     "NETStandard.Library": "1.6.1",
     "Ofl.Core.Contracts": "1.0.3",
     "Ofl.Google": "1.0.2",
-    "Ofl.Google.Maps.Contracts": "1.1.4"
+    "Ofl.Google.Maps.Contracts": "1.2.7"
   },
   "frameworks": {
     "netstandard1.3": {}
