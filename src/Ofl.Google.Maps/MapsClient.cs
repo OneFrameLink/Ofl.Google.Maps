@@ -3,9 +3,10 @@ using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.WebUtilities;
-using Ofl.Core.Net.Http;
 using Ofl.Google.Maps.Geocode;
 using Ofl.Google.Maps.TimeZone;
+using Ofl.Net.Http;
+using Ofl.Threading.Tasks;
 
 namespace Ofl.Google.Maps
 {
@@ -21,13 +22,13 @@ namespace Ofl.Google.Maps
 
         #region Overrides
 
-        protected override Task<string> FormatUrlAsync(string url, CancellationToken cancellationToken)
+        protected override ValueTask<string> FormatUrlAsync(string url, CancellationToken cancellationToken)
         {
             // Validate parameters.
             if (string.IsNullOrWhiteSpace(url)) throw new ArgumentNullException(nameof(url));
 
             // Format.
-            return Task.FromResult("https://maps.googleapis.com/maps/api" + url);
+            return ValueTaskExtensions.FromResult("https://maps.googleapis.com/maps/api" + url);
         }
 
         #endregion
