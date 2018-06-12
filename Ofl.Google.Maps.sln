@@ -2,13 +2,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ofl.Google.Maps", "src\Ofl.Google.Maps\Ofl.Google.Maps.csproj", "{3A05CE0C-A835-4993-BC8A-76E2234AC6B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ofl.Google.Maps", "src\Ofl.Google.Maps\Ofl.Google.Maps.csproj", "{3A05CE0C-A835-4993-BC8A-76E2234AC6B7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{999A3573-281D-48E8-8F9A-1FE49637B11E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0A27F9A8-405E-4AB5-AD4F-C6860212B571}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ofl.Google.Maps.Tests", "test\Ofl.Google.Maps.Tests\Ofl.Google.Maps.Tests.csproj", "{C5D7F9EC-1008-424A-A910-61E1F2D47173}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-level items", "solution-level items", "{FD7DA5AE-906A-4526-87AB-33B92C271A5B}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		.gitmodules = .gitmodules
+		appveyor.yml = appveyor.yml
+		directory.build.props = directory.build.props
+		LICENSE = LICENSE
+		Ofl.Google.Maps.sln.DotSettings = Ofl.Google.Maps.sln.DotSettings
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,5 +42,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3A05CE0C-A835-4993-BC8A-76E2234AC6B7} = {999A3573-281D-48E8-8F9A-1FE49637B11E}
 		{C5D7F9EC-1008-424A-A910-61E1F2D47173} = {0A27F9A8-405E-4AB5-AD4F-C6860212B571}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74F8746B-5242-4B68-87C7-AE25387AF90A}
 	EndGlobalSection
 EndGlobal
