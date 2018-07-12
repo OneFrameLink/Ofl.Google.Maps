@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Globalization;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.WebUtilities;
 using Ofl.Google.Maps.Geocode;
 using Ofl.Google.Maps.TimeZone;
-using Ofl.Net.Http;
+using Ofl.Net.Http.ApiClient.Json;
 using Ofl.Threading.Tasks;
 
 namespace Ofl.Google.Maps
 {
-    public class MapsClient : GoogleApiClient, IMapsClient
+    public class MapsClient : JsonApiClient, IMapsClient
     {
         #region Constructor
 
-        public MapsClient(IApiKeyProvider apiKeyProvider, IHttpClientFactory httpClientFactory) : 
-            base(apiKeyProvider, httpClientFactory)
+        public MapsClient(HttpClient httpClient) : 
+            base(httpClient)
         { }
 
         #endregion
