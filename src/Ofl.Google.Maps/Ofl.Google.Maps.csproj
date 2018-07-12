@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.1.1" />
-    <PackageReference Include="Ofl.Google" Version="3.0.9" />
+    <PackageReference Include="Ofl.Google" Version="3.0.10" />
     <PackageReference Include="Ofl.Google.Maps.Abstractions" Version="2.0.3" />
     <PackageReference Include="Ofl.Net.Http.ApiClient.Json" Version="2.0.7" />
     <PackageReference Include="Ofl.Threading" Version="2.0.3" />
