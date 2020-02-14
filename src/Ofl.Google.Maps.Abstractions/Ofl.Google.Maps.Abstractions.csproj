@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Description>Abstractions used by the Ofl.Google.Maps project.</Description>
+    <AssemblyName>Ofl.Google.Maps.Abstractions</AssemblyName>
+    <PackageId>Ofl.Google.Maps.Abstractions</PackageId>
+    <PackageProjectUrl>https://github.com/OneFrameLink/Ofl.Google.Maps.Abstractions</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/OneFrameLink/Ofl.Google.Maps.Abstractions.git</RepositoryUrl>
+    <RootNamespace>Ofl.Google.Maps</RootNamespace>
+    <PackageTags>google-maps google-maps-api</PackageTags>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Ofl.Google.Abstractions" Version="2.0.3" />
+    <PackageReference Include="System.Text.Json" Version="4.7.0" />
+  </ItemGroup>
+</Project>

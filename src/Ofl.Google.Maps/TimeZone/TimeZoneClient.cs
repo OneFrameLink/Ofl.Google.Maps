@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Globalization;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.WebUtilities;
-using Ofl.Google.Maps.Geocode;
-using Ofl.Google.Maps.TimeZone;
 using Ofl.Net.Http.ApiClient.Json;
 using Ofl.Threading.Tasks;
 
-namespace Ofl.Google.Maps
+namespace Ofl.Google.Maps.TimeZone
 {
-    public class MapsClient : JsonApiClient, IMapsClient
+    public class TimeZoneClient : JsonApiClient, ITimeZoneClient
     {
         #region Constructor
 
-        public MapsClient(HttpClient httpClient) : 
+        public TimeZoneClient(HttpClient httpClient) : 
             base(httpClient)
         { }
 
@@ -32,9 +31,14 @@ namespace Ofl.Google.Maps
             return ValueTaskExtensions.FromResult("https://maps.googleapis.com/maps/api" + url);
         }
 
+        protected override JsonSerializerOptions CreateJsonSerializerOptions() =>
+            new JsonSerializerOptions {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            };
+
         #endregion
 
-        #region Implementation of IMapsClient
+        #region Implementation of ITimeZoneClient
 
         public Task<TimeZoneResponse> GetTimeZoneAsync(TimeZoneRequest request, CancellationToken cancellationToken)
         {
@@ -55,21 +59,6 @@ namespace Ofl.Google.Maps
 
             // Return the response.
             return GetAsync<TimeZoneResponse>(uri, cancellationToken);
-        }
-
-        public Task<GeocodeResponse> GeocodeAsync(GeocodeRequest request, CancellationToken cancellationToken)
-        {
-            // Validate parameters.
-            if (request == null) throw new ArgumentNullException(nameof(request));
-
-            // The URI.
-            string uri = "/geocode/json";
-
-            // Add query parameters.
-            uri = QueryHelpers.AddQueryString(uri, "address", request.Address);
-
-            // Return the response.
-            return GetAsync<GeocodeResponse>(uri, cancellationToken);
         }
 
         #endregion
