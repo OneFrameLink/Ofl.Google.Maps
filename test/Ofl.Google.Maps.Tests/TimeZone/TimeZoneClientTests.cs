@@ -39,7 +39,6 @@ namespace Ofl.Google.Maps.Tests.TimeZone
 
             // Assert.
             Assert.Equal(Status.OK, actual.Status);
-            Assert.Null(actual.ErrorMessage);
             Assert.Equal(TimeSpan.FromHours(1), actual.DstOffset);
             Assert.Equal(TimeSpan.FromHours(-5), actual.RawOffset);
             Assert.Equal("America/New_York", actual.TimeZoneId);

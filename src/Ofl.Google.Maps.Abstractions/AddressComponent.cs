@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Ofl.Google.Maps.Geocoding
+namespace Ofl.Google.Maps
 {
     public class AddressComponent
     {

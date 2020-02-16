@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 using Ofl.Google.Maps.Geocoding;
+using Ofl.Google.Maps.Places;
 using Ofl.Google.Maps.TimeZone;
 
 namespace Ofl.Google.Maps
@@ -15,6 +16,7 @@ namespace Ofl.Google.Maps
             // Configure the clients.
             sc = sc.AddGoogleGeocodingClient();
             sc = sc.AddGoogleTimeZoneClient();
+            sc = sc.AddGooglePlacesClient();
 
             // Return the service collection.
             return sc;

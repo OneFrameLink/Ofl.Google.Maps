@@ -1,4 +1,4 @@
-﻿namespace Ofl.Google.Maps.Geocoding
+﻿namespace Ofl.Google.Maps
 {
     public class Coordinates
     {

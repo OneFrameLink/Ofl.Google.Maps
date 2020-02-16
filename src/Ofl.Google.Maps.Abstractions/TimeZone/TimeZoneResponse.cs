@@ -17,8 +17,5 @@ namespace Ofl.Google.Maps.TimeZone
         public string? TimeZoneName { get; set; }
 
         public Status Status { get; set; }
-
-        [JsonPropertyName("error_message")]
-        public string? ErrorMessage { get; set; }
     }
 }

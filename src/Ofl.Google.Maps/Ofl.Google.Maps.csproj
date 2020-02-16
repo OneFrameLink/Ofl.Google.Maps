@@ -23,4 +23,8 @@
     <ProjectReference Include="..\Ofl.Google.Maps.Abstractions\Ofl.Google.Maps.Abstractions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Places\" />
+  </ItemGroup>
+
 </Project>

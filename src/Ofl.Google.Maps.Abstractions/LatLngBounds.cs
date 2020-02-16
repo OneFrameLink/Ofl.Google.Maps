@@ -1,6 +1,6 @@
-﻿namespace Ofl.Google.Maps.Geocoding
+﻿namespace Ofl.Google.Maps
 {
-    public class Viewport
+    public class LatLngBounds
     {
         public Coordinates? Northeast { get; set; }
 
