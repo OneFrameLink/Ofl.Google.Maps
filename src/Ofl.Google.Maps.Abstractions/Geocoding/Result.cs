@@ -16,9 +16,7 @@ namespace Ofl.Google.Maps.Geocoding
 
         public Geometry? Geometry { get; set; }
 
-        // TODO: Postcodes
-        // https://developers.google.com/maps/documentation/geocoding/intro#Results
-        // public string? PlusCode { get; set; }
+        public PlusCode? PlusCode { get; set; }
 
         public bool PartialMatch { get; set; }
         

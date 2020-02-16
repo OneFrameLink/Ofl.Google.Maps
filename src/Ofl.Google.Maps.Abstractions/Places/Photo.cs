@@ -2,12 +2,14 @@
 
 namespace Ofl.Google.Maps.Places
 {
-    public class PlaceDetails
+    public class Photo
     {
-        public Status Status { get; set; }
-
-        public Result? Result { get; set; }
+        public int Height { get; set; }
 
         public IReadOnlyCollection<string>? HtmlAttributions { get; set; }
+
+        public string? PhotoReference { get; set; }
+
+        public int Width { get; set; }
     }
 }
