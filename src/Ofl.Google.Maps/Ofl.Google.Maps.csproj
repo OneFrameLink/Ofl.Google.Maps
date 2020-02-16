@@ -14,6 +14,7 @@
     <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
     <PackageReference Include="Ofl.Google" Version="4.0.15" />
     <PackageReference Include="Ofl.Net.Http.ApiClient.Json" Version="3.0.11" />
+    <PackageReference Include="Ofl.Text.Json" Version="1.1.3" />
     <PackageReference Include="Ofl.Threading.Tasks" Version="3.0.6" />
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.3" />
   </ItemGroup>

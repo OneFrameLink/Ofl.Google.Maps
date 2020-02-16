@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Net.Http;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.WebUtilities;
@@ -33,7 +34,8 @@ namespace Ofl.Google.Maps.TimeZone
 
         protected override JsonSerializerOptions CreateJsonSerializerOptions() =>
             new JsonSerializerOptions {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                Converters = { new JsonStringEnumConverter() }
             };
 
         #endregion

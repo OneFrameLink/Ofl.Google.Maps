@@ -4,10 +4,30 @@ namespace Ofl.Google.Maps.TimeZone
 {
     public class TimeZoneRequest
     {
-        public decimal Latitude { get; set; }
+        #region Constructor
 
-        public decimal Longitude { get; set; }
+        public TimeZoneRequest(
+            decimal latitude,
+            decimal longitude,
+            DateTime timestamp
+        )
+        {
+            // Assign values.
+            Latitude = latitude;
+            Longitude = longitude;
+            Timestamp = timestamp;
+        }
 
-        public DateTime Timestamp { get; set; }
+        #endregion
+
+        #region Instance, read-only state
+
+        public decimal Latitude { get; }
+
+        public decimal Longitude { get; }
+
+        public DateTime Timestamp { get; }
+
+        #endregion
     }
 }

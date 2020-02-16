@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.WebUtilities;
 using Ofl.Net.Http.ApiClient.Json;
+using Ofl.Text.Json;
 using Ofl.Threading.Tasks;
 
 namespace Ofl.Google.Maps.Geocoding
@@ -32,7 +33,7 @@ namespace Ofl.Google.Maps.Geocoding
 
         protected override JsonSerializerOptions CreateJsonSerializerOptions() =>
             new JsonSerializerOptions {
-
+                PropertyNamingPolicy = new SnakeCaseJsonNamingPolicy(true)
             };
 
         #endregion

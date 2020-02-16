@@ -28,11 +28,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ofl.Google.Maps.Abstraction
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ofl.Google.Maps.Abstractions", "src\Ofl.Google.Maps.Abstractions\Ofl.Google.Maps.Abstractions.csproj", "{79DC708E-71F5-40A4-B84C-2780D1C0C1B2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "project-level items", "project-level items", "{E37F9D1F-5386-4D18-BC61-C288E32467F5}"
-	ProjectSection(SolutionItems) = preProject
-		test\directory.build.props = test\directory.build.props
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,7 +59,6 @@ Global
 		{C5D7F9EC-1008-424A-A910-61E1F2D47173} = {0A27F9A8-405E-4AB5-AD4F-C6860212B571}
 		{38D16A12-DAAF-4A26-BDEE-019DE9D9EC29} = {0A27F9A8-405E-4AB5-AD4F-C6860212B571}
 		{79DC708E-71F5-40A4-B84C-2780D1C0C1B2} = {999A3573-281D-48E8-8F9A-1FE49637B11E}
-		{E37F9D1F-5386-4D18-BC61-C288E32467F5} = {0A27F9A8-405E-4AB5-AD4F-C6860212B571}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {74F8746B-5242-4B68-87C7-AE25387AF90A}

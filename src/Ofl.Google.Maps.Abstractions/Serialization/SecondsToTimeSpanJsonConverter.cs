@@ -12,10 +12,10 @@ namespace Ofl.Google.Maps.Serialization.Newtonsoft
         {
             // Token type must be an integer.
             if (reader.TokenType != JsonTokenType.Number)
-                throw new InvalidOperationException($"Unexpected token parsing date. Expected {nameof(JsonTokenType.Number)}, got {reader.TokenType}.");
+                throw new JsonException($"Unexpected token parsing date. Expected {nameof(JsonTokenType.Number)}, got {reader.TokenType}.");
 
             // Convert.
-            return TimeSpan.FromSeconds(reader.GetUInt64());
+            return TimeSpan.FromSeconds(reader.GetInt64());
         }
 
         public override void Write(Utf8JsonWriter writer, TimeSpan value, JsonSerializerOptions options) =>

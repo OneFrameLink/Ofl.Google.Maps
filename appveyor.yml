@@ -13,6 +13,14 @@ environment:
     secure: yAZjzbVhtfeKof5pGJ/N65IjSffBIJoX5MZIpqbtHkc=
 
 #--------------------------------------------------
+# Note that the following is custom to this project and
+# needs to be replicated if this file is copy and pasted
+# from Ofl._shared.
+#--------------------------------------------------
+  GOOGLE__APIKEY:
+    secure: WEbkgGjWbtwHIf4dQ9Wyw+Gq+OgZyqLGp89YisTO5nvWoMykysA+CbMlDZCMO/oG
+
+#--------------------------------------------------
 # Branch whitelist
 #--------------------------------------------------
 branches:
@@ -48,8 +56,8 @@ build:
 # Build hooks - before
 #--------------------------------------------------
 before_build:
-# Patch version in csproj
-  - ps: $temp_path = (Get-Item src\$env:APPVEYOR_PROJECT_NAME\$env:APPVEYOR_PROJECT_NAME.csproj).FullName
+# Patch version in directory.build.props
+  - ps: $temp_path = (Get-Item directory.build.props).FullName
   - ps: $temp_csproj = [xml](Get-Content $temp_path)
   - ps: $temp_csproj.Project.PropertyGroup.Version = $temp_csproj.Project.PropertyGroup.Version -replace '\.[0-9]+$', ".$env:APPVEYOR_BUILD_NUMBER"
   - ps: $temp_csproj.Save($temp_path)

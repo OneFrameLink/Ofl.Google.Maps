@@ -10,7 +10,7 @@
     <PackageTags>google-maps google-maps-api</PackageTags>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Ofl.Google.Abstractions" Version="2.0.3" />
+    <PackageReference Include="Ofl.Google.Abstractions" Version="3.0.7" />
     <PackageReference Include="System.Text.Json" Version="4.7.0" />
   </ItemGroup>
 </Project>
