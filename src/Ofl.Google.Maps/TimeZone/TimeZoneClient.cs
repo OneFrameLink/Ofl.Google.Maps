@@ -33,10 +33,7 @@ namespace Ofl.Google.Maps.TimeZone
         }
 
         protected override JsonSerializerOptions CreateJsonSerializerOptions() =>
-            new JsonSerializerOptions {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-                Converters = { new JsonStringEnumConverter() }
-            };
+            SerializationExtensions.TimeZoneClientJsonSerializerOptions;
 
         #endregion
 

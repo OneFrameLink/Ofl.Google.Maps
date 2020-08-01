@@ -36,6 +36,26 @@ namespace Ofl.Google.Maps.Tests.Places
             Assert.Equal(placeId, actual.Result.PlaceId);
         }
 
+        [Fact]
+        public async Task Test_GetDetails2Async()
+        {
+            // Get the client.
+            IPlacesClient client = Fixture.GetRequiredService<IPlacesClient>();
+
+            // The place ID.
+            // The White House, US.
+            string placeId = "ChIJdY8J6x3IBZERR5k0LHRrmBU";
+
+            // Execute.
+            PlaceDetails actual = await client
+                .GetDetailsAsync(placeId, default)
+                .ConfigureAwait(false);
+
+            // Assert.
+            Assert.Equal(Status.OK, actual.Status);
+            Assert.Equal(placeId, actual.Result.PlaceId);
+        }
+
         #endregion
     }
 }

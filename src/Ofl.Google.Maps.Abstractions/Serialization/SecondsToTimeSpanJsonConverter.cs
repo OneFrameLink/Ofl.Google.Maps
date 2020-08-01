@@ -19,7 +19,8 @@ namespace Ofl.Google.Maps.Serialization.Newtonsoft
         }
 
         public override void Write(Utf8JsonWriter writer, TimeSpan value, JsonSerializerOptions options) =>
-            throw new NotImplementedException();
+            // Write the seconds as a long.
+            writer.WriteNumberValue((long)value.TotalSeconds);
 
         #endregion
     }

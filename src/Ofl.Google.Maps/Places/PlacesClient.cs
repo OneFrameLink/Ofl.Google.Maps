@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Net.Http;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.WebUtilities;
 using Ofl.Net.Http.ApiClient.Json;
-using Ofl.Text.Json;
 using Ofl.Threading.Tasks;
 
 namespace Ofl.Google.Maps.Places
@@ -24,10 +22,7 @@ namespace Ofl.Google.Maps.Places
         #region Overrides
 
         protected override JsonSerializerOptions CreateJsonSerializerOptions() =>
-            new JsonSerializerOptions {
-                PropertyNamingPolicy = new SnakeCaseJsonNamingPolicy(true),
-                Converters = { new JsonStringEnumConverter() }
-            };
+            SerializationExtensions.PlacesClientJsonSerializerOptions;
 
         protected override ValueTask<string> FormatUrlAsync(string url, CancellationToken cancellationToken)
         {
